@@ -806,8 +806,8 @@ export interface ApiBlogBlog extends Schema.CollectionType {
       ['Techniques', 'Etiquette', 'Travel', 'Equipment', 'Beginners', 'History']
     >;
     slug: Attribute.UID<'api::blog.blog', 'Title'> & Attribute.Required;
-    Description: Attribute.Blocks;
-    Excerpt: Attribute.String;
+    Description: Attribute.Blocks & Attribute.Required;
+    Excerpt: Attribute.Text;
     Tags: Attribute.JSON & Attribute.CustomField<'plugin::tagsinput.tags'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -815,6 +815,39 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     createdBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiOrderOrder extends Schema.CollectionType {
+  collectionName: 'orders';
+  info: {
+    singularName: 'order';
+    pluralName: 'orders';
+    displayName: 'Order';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    Phone: Attribute.Integer;
+    email: Attribute.Email;
+    paymentMethod: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::order.order',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::order.order',
+      'oneToOne',
+      'admin::user'
+    > &
       Attribute.Private;
   };
 }
@@ -862,6 +895,11 @@ export interface ApiTestimonialTestimonial extends Schema.CollectionType {
   };
   attributes: {
     Description: Attribute.Text;
+    image: Attribute.Media<'images'>;
+    medel: Attribute.Media<'images'>;
+    AvName: Attribute.String;
+    AvDesig: Attribute.String;
+    win: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -899,6 +937,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::blog.blog': ApiBlogBlog;
+      'api::order.order': ApiOrderOrder;
       'api::service.service': ApiServiceService;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
     }

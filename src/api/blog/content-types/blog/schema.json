@@ -40,10 +40,11 @@
       "targetField": "Title"
     },
     "Description": {
-      "type": "blocks"
+      "type": "blocks",
+      "required": true
     },
     "Excerpt": {
-      "type": "string"
+      "type": "text"
     },
     "Tags": {
       "type": "customField",
