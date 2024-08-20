@@ -794,14 +794,21 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     singularName: 'blog';
     pluralName: 'blogs';
     displayName: 'blog';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    Title: Attribute.String;
     image: Attribute.Media<'images'>;
-    Description: Attribute.RichText;
+    Title: Attribute.String;
+    Category: Attribute.Enumeration<
+      ['Techniques', 'Etiquette', 'Travel', 'Equipment', 'Beginners', 'History']
+    >;
+    slug: Attribute.UID<'api::blog.blog', 'Title'> & Attribute.Required;
+    Description: Attribute.Blocks;
+    Excerpt: Attribute.String;
+    Tags: Attribute.JSON & Attribute.CustomField<'plugin::tagsinput.tags'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -855,8 +862,6 @@ export interface ApiTestimonialTestimonial extends Schema.CollectionType {
   };
   attributes: {
     Description: Attribute.Text;
-    image: Attribute.Media<'images'>;
-    medel: Attribute.Media<'images'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

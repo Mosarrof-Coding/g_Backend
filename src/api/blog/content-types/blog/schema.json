@@ -4,25 +4,50 @@
   "info": {
     "singularName": "blog",
     "pluralName": "blogs",
-    "displayName": "blog"
+    "displayName": "blog",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
     "Title": {
       "type": "string"
     },
-    "image": {
-      "allowedTypes": [
-        "images"
-      ],
-      "type": "media",
-      "multiple": false
+    "Category": {
+      "type": "enumeration",
+      "enum": [
+        "Techniques",
+        "Etiquette",
+        "Travel",
+        "Equipment",
+        "Beginners",
+        "History"
+      ]
+    },
+    "slug": {
+      "type": "uid",
+      "required": true,
+      "targetField": "Title"
     },
     "Description": {
-      "type": "richtext"
+      "type": "blocks"
+    },
+    "Excerpt": {
+      "type": "string"
+    },
+    "Tags": {
+      "type": "customField",
+      "customField": "plugin::tagsinput.tags"
     }
   }
 }
