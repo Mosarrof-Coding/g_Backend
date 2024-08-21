@@ -4,15 +4,30 @@
   "info": {
     "singularName": "service",
     "pluralName": "services",
-    "displayName": "Service"
+    "displayName": "Service",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "Title": {
+    "Service_name": {
       "type": "string"
+    },
+    "Price": {
+      "type": "decimal"
+    },
+    "Package_type": {
+      "type": "enumeration",
+      "enum": [
+        "Basic",
+        "Premium",
+        "Golf Luxury"
+      ]
+    },
+    "Features": {
+      "type": "text"
     }
   }
 }
