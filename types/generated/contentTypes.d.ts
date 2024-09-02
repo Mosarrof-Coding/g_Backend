@@ -858,7 +858,7 @@ export interface ApiMessageMessage extends Schema.CollectionType {
   info: {
     singularName: 'message';
     pluralName: 'messages';
-    displayName: 'message';
+    displayName: 'Message';
     description: '';
   };
   options: {
