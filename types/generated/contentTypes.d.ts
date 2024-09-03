@@ -867,6 +867,8 @@ export interface ApiMessageMessage extends Schema.CollectionType {
   attributes: {
     name: Attribute.String;
     message: Attribute.Text;
+    isRead: Attribute.Boolean;
+    timestamp: Attribute.DateTime;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

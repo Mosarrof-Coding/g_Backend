@@ -17,6 +17,12 @@
     },
     "message": {
       "type": "text"
+    },
+    "isRead": {
+      "type": "boolean"
+    },
+    "timestamp": {
+      "type": "datetime"
     }
   }
 }
