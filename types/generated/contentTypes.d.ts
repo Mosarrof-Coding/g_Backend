@@ -956,6 +956,33 @@ export interface ApiServiceService extends Schema.CollectionType {
   };
 }
 
+export interface ApiShopShop extends Schema.CollectionType {
+  collectionName: 'shops';
+  info: {
+    singularName: 'shop';
+    pluralName: 'shops';
+    displayName: 'Shop';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    Price: Attribute.Decimal;
+    image: Attribute.Media<'images'>;
+    Category: Attribute.Enumeration<
+      ['Golf Balls', 'Golf Club', 'Putters', 'T-Shirt', 'Uncategorized']
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::shop.shop', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::shop.shop', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiTestimonialTestimonial extends Schema.CollectionType {
   collectionName: 'testimonials';
   info: {
@@ -1015,6 +1042,7 @@ declare module '@strapi/types' {
       'api::message.message': ApiMessageMessage;
       'api::order.order': ApiOrderOrder;
       'api::service.service': ApiServiceService;
+      'api::shop.shop': ApiShopShop;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
     }
   }
