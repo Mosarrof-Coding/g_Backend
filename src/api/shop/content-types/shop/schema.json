@@ -4,7 +4,8 @@
   "info": {
     "singularName": "shop",
     "pluralName": "shops",
-    "displayName": "Shop"
+    "displayName": "Shop",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,11 +19,12 @@
       "type": "decimal"
     },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "Category": {
       "type": "enumeration",
@@ -33,6 +35,9 @@
         "T-Shirt",
         "Uncategorized"
       ]
+    },
+    "Description": {
+      "type": "text"
     }
   }
 }

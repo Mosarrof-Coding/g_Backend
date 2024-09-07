@@ -962,6 +962,7 @@ export interface ApiShopShop extends Schema.CollectionType {
     singularName: 'shop';
     pluralName: 'shops';
     displayName: 'Shop';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -973,6 +974,7 @@ export interface ApiShopShop extends Schema.CollectionType {
     Category: Attribute.Enumeration<
       ['Golf Balls', 'Golf Club', 'Putters', 'T-Shirt', 'Uncategorized']
     >;
+    Description: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
