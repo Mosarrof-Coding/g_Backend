@@ -809,6 +809,7 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     Description: Attribute.Blocks & Attribute.Required;
     Excerpt: Attribute.Text;
     Tags: Attribute.JSON & Attribute.CustomField<'plugin::tagsinput.tags'>;
+    thumbnail: Attribute.Media<'images'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1051,6 +1052,7 @@ export interface ApiTrainingTraining extends Schema.CollectionType {
     singularName: 'training';
     pluralName: 'trainings';
     displayName: 'Training';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1062,6 +1064,7 @@ export interface ApiTrainingTraining extends Schema.CollectionType {
     Price: Attribute.Decimal;
     link: Attribute.String;
     Category: Attribute.String;
+    thumbnail: Attribute.Media<'images'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

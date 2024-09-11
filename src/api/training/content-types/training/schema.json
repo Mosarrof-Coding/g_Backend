@@ -4,7 +4,8 @@
   "info": {
     "singularName": "training",
     "pluralName": "trainings",
-    "displayName": "Training"
+    "displayName": "Training",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,11 +19,12 @@
       "type": "string"
     },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "Price": {
       "type": "decimal"
@@ -32,6 +34,13 @@
     },
     "Category": {
       "type": "string"
+    },
+    "thumbnail": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

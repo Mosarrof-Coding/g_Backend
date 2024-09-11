@@ -49,6 +49,13 @@
     "Tags": {
       "type": "customField",
       "customField": "plugin::tagsinput.tags"
+    },
+    "thumbnail": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
