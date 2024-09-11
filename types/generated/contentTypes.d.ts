@@ -1045,6 +1045,41 @@ export interface ApiTestimonialTestimonial extends Schema.CollectionType {
   };
 }
 
+export interface ApiTrainingTraining extends Schema.CollectionType {
+  collectionName: 'trainings';
+  info: {
+    singularName: 'training';
+    pluralName: 'trainings';
+    displayName: 'Training';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    desig: Attribute.String;
+    image: Attribute.Media<'images'>;
+    Price: Attribute.Decimal;
+    link: Attribute.String;
+    Category: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::training.training',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::training.training',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1071,6 +1106,7 @@ declare module '@strapi/types' {
       'api::shop.shop': ApiShopShop;
       'api::team.team': ApiTeamTeam;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
+      'api::training.training': ApiTrainingTraining;
     }
   }
 }

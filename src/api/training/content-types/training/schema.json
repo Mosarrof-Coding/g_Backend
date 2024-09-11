@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "trainings",
+  "info": {
+    "singularName": "training",
+    "pluralName": "trainings",
+    "displayName": "Training"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "desig": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Price": {
+      "type": "decimal"
+    },
+    "link": {
+      "type": "string"
+    },
+    "Category": {
+      "type": "string"
+    }
+  }
+}
